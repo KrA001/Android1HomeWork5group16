@@ -16,6 +16,7 @@ class SecondActivity : AppCompatActivity() {
 
         fillCarsList()
         setupRecyclerView()
+        scrollToEnd()
         }
 
     private fun fillCarsList() {
@@ -32,8 +33,14 @@ class SecondActivity : AppCompatActivity() {
         carsListAdapter.setData(carsList)
     }
 
-
     private fun setupRecyclerView() {
         binding.rvCar.adapter = carsListAdapter
+    }
+
+    // функция перемещение в низ просто сделать 0 это самый верх делите / 2 а вниз минус - 1
+    private fun scrollToEnd() {
+        binding.fabToEnd.setOnClickListener {
+            binding.rvCar.scrollToPosition(carsListAdapter.itemCount - 1)
+        }
     }
 }

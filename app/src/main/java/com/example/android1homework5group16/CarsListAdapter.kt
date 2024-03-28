@@ -11,6 +11,7 @@ class CarsListAdapter : RecyclerView.Adapter<CarsListAdapter.CarViewHolder>() {
     fun setData(data: List<Car>) {
         cars = data
     }
+
     class CarViewHolder(private val binding: CarItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun onBind(cars: Car) = with(binding) {
